@@ -58,7 +58,7 @@ object ConfigLoader extends App {
       ConfigSource
         .propFileOnClasspath[Id]("/application.conf", optional = false)
         .caseInsensitive >
-      ConfigSource.system[Id].caseInsensitive // from jvm parameter
+      ConfigSource.system[Id].caseInsensitive // from jvm parameter and can run as: sbt -Dapp_home=/Users/krish "project scala3_lang_2;runMain com.baeldung.clearconfig.ConfigLoader"
 
   val dbCfg: DatabaseConfig =
     DatabaseConfig.config
