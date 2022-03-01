@@ -60,10 +60,12 @@ object ConfigLoader extends App {
         .caseInsensitive >
       ConfigSource.system[Id].caseInsensitive // from jvm parameter and can run as: sbt -Dapp_home=/Users/krish "project scala3_lang_2;runMain com.baeldung.clearconfig.ConfigLoader"
 
-  val dbCfg: DatabaseConfig =
+  val (dbCfg, report): (DatabaseConfig, ConfigReport) =
     DatabaseConfig.config
+      .withReport
       .run(configSources)
       .getOrDie()
 
   println(dbCfg)
+  println(report.full)
 }
