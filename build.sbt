@@ -251,7 +251,10 @@ lazy val scala_design_patterns = (project in file("scala-design-patterns"))
 
 lazy val scala3_lang = project in file("scala3-lang")
 
-lazy val scala3_lang_2 = project in file("scala3-lang-2")
+lazy val scala3_lang_2 = (project in file("scala3-lang-2"))
+.settings(
+  libraryDependencies += "com.github.japgolly.clearconfig" %% "core" % "3.0.0"
+)
 
 lazy val cats_effects = (project in file("cats-effects"))
   .settings(
