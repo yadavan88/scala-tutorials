@@ -303,7 +303,9 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % Test,
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-async" % "1.0.1",
-      "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided
+      "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided,
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4",
+      "ch.qos.logback" % "logback-classic" % "1.3.5"
     ),
     scalacOptions += "-Xasync"
   )
