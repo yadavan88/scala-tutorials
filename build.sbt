@@ -6,11 +6,11 @@ ThisBuild / organization := "com.baeldung"
 ThisBuild / organizationName := "core-scala"
 
 val jUnitInterface = "com.github.sbt" % "junit-interface" % "0.13.3" % "test"
-val catsEffect = "org.typelevel" %% "cats-effect" % "3.5.1"
-val catEffectTest = "org.typelevel" %% "cats-effect-testkit" % "3.5.1" % Test
+val catsEffect = "org.typelevel" %% "cats-effect" % "3.5.2"
+val catEffectTest = "org.typelevel" %% "cats-effect-testkit" % "3.5.2" % Test
 val scalaReflection = "org.scala-lang" % "scala-reflect" % scalaV
 val logback = "ch.qos.logback" % "logback-classic" % "1.3.11"
-val embedMongoVersion = "4.7.2"
+val embedMongoVersion = "4.9.2"
 
 val scalaTestDeps = Seq(
   "org.scalatest" %% "scalatest" % "3.2.17" % Test,
@@ -20,7 +20,7 @@ val scalaTestDeps = Seq(
 )
 
 val scalaMock = "org.scalamock" %% "scalamock" % "5.2.0" % Test
-val zioVersion = "2.0.17"
+val zioVersion = "2.0.18"
 
 lazy val scala_core = (project in file("scala-core"))
   .settings(
@@ -239,7 +239,7 @@ lazy val scala_libraries = (project in file("scala-libraries"))
       "com.github.julien-truffaut" %% "monocle-macro" % monocleVersion,
       "com.github.julien-truffaut" %% "monocle-law" % monocleVersion % "test",
       "com.typesafe.slick" %% "slick" % slickVersion,
-      "com.h2database" % "h2" % "2.2.220",
+      "com.h2database" % "h2" % "2.2.224",
       "com.chuusai" %% "shapeless" % shapelessVersion,
       "org.scalaz" %% "scalaz-core" % scalazVersion,
       "co.fs2" %% "fs2-core" % fs2Version,
@@ -256,10 +256,10 @@ lazy val scala_libraries = (project in file("scala-libraries"))
     )
   )
 
-val circeVersion = "0.14.5"
+val circeVersion = "0.14.6"
 val monixVersion = "3.4.1"
-val elastic4sVersion = "8.8.3"
-val sparkVersion = "3.4.1"
+val elastic4sVersion = "8.9.3"
+val sparkVersion = "3.5.0"
 
 val sparkCoreDep = "org.apache.spark" %% "spark-core" % sparkVersion
 val sparkSqlDep = "org.apache.spark" %% "spark-sql" % sparkVersion
@@ -362,13 +362,13 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
     libraryDependencies ++= Seq(
       "com.clever-cloud.pulsar4s" %% "pulsar4s-core" % "2.9.0",
       "com.clever-cloud.pulsar4s" %% "pulsar4s-jackson" % "2.9.0",
-      "org.testcontainers" % "pulsar" % "1.18.3" % IntegrationTest
+      "org.testcontainers" % "pulsar" % "1.19.1" % IntegrationTest
     ),
     libraryDependencies ++= Seq(
-      "software.amazon.awssdk" % "s3" % "2.20.128",
+      "software.amazon.awssdk" % "s3" % "2.20.158",
       "com.amazonaws" % "aws-java-sdk-s3" % "1.12.556" % IntegrationTest,
-      "com.dimafeng" %% "testcontainers-scala-scalatest" % "0.40.17" % IntegrationTest,
-      "com.dimafeng" %% "testcontainers-scala-localstack-v2" % "0.40.17" % IntegrationTest
+      "com.dimafeng" %% "testcontainers-scala-scalatest" % "0.41.0" % IntegrationTest,
+      "com.dimafeng" %% "testcontainers-scala-localstack-v2" % "0.41.0" % IntegrationTest
     ),
     libraryDependencies ++= Seq(
       "com.github.seratch" %% "awscala" % "0.9.2"
@@ -379,13 +379,13 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
   )
 
 val spireVersion = "0.18.0"
-val kafkaVersion = "3.5.1"
+val kafkaVersion = "7.5.0-ce"
 val pureconfigVersion = "0.17.4"
 val jackSonVersion = "2.15.2"
 val log4jApiScalaVersion = "12.0"
 val log4jVersion = "2.20.0"
 val avro4sVersion = "4.1.1"
-val kafkaAvroSerializer = "6.0.14"
+val kafkaAvroSerializer = "6.2.11"
 
 lazy val scala_libraries_5 = (project in file("scala-libraries-5"))
   .settings(
@@ -411,7 +411,8 @@ lazy val scala_strings = (project in file("scala-strings"))
   .settings(
     name := "scala-strings",
     libraryDependencies ++= scalaTestDeps,
-    libraryDependencies += jUnitInterface
+    libraryDependencies += jUnitInterface,
+    libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
   )
 
 lazy val scala_design_patterns = (project in file("scala-design-patterns"))
@@ -427,6 +428,10 @@ lazy val scala3_lang = (project in file("scala3-lang")).settings(
 )
 
 lazy val scala3_lang_2 = (project in file("scala3-lang-2")).settings(
+  libraryDependencies ++= scalaTestDeps
+)
+
+lazy val scala3_lang_3 = (project in file("scala3-lang-3")).settings(
   libraryDependencies ++= scalaTestDeps
 )
 
