@@ -21,4 +21,4 @@ addSbtPlugin("net.aichler" % "sbt-jupiter-interface" % "0.8.4")
 
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
 
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.8")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.11")
