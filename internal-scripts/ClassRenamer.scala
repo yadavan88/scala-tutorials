@@ -23,11 +23,13 @@ object RenameClassNames {
 
         val fileNameWithoutExtension = fileName.dropRight(6)
 
+        def isTestClass(existingClassName: String): Boolean = {
+          existingClassName.endsWith("Spec") || existingClassName.endsWith("Test")
+        }
+
         // Rename the class if it doesn't match the filename
         if (
-          !existingClassName.toLowerCase.startsWith(
-            "case "
-          ) && existingClassName.toLowerCase != fileNameWithoutExtension.toLowerCase
+          isTestClass(existingClassName) && existingClassName.toLowerCase != fileNameWithoutExtension.toLowerCase
         ) {
           // Update the content with the new class name
           val updatedContent = content.replaceAll(
@@ -40,7 +42,7 @@ object RenameClassNames {
           os.move(filePath, os.Path(newFileName))
 
           //Now, rename the class
-          os.write.over(filePath, newFileName)
+          os.write.over(os.Path(newFileName), updatedContent)
           println(s"Renamed class in $fileName to $fileNameWithoutExtension")
         }
       }
