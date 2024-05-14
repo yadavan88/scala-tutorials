@@ -22,7 +22,7 @@ object RenameClassNames {
         val newFileName = _filePath.toString
           .replace("Test.scala", "UnitTest.scala")
           .replace("Spec.scala", "UnitTest.scala")
-        
+
         // rename file
         val newFilePath = os.Path(newFileName)
         os.move(_filePath, newFilePath)
@@ -33,8 +33,11 @@ object RenameClassNames {
         val fileNameWithoutExtension = newFilePath.last.dropRight(6)
 
         def isTestClass(existingClassName: String): Boolean = {
-          existingClassName
+          val endsWithTestOrSpec = existingClassName
             .endsWith("Spec") || existingClassName.endsWith("Test")
+
+          val isClass = existingClassName.startsWith("class")
+          endsWithTestOrSpec && isClass
         }
 
         // Rename the class if it doesn't match the filename
