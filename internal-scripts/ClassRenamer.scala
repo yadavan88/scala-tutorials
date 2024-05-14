@@ -15,21 +15,32 @@ object RenameClassNames {
       .filter(f =>
         f.toString.endsWith("Test.scala") || f.toString.endsWith("Spec.scala")
       )
-      .foreach { filePath =>
-        val fileName = filePath.last
-        val content = os.read(filePath)
+      .foreach { _filePath =>
+        val _fileName = _filePath.last
 
+        val newFileName = _filePath.toString
+          .replace("Test.scala", "UnitTest.scala")
+          .replace("Spec.scala", "UnitTest.scala")
+        
+        // rename file
+        val newFilePath = os.Path(newFileName)
+        os.move(_filePath, newFilePath)
+
+        val content = os.read(newFilePath)
         val existingClassName = getClassFromContent(content)
 
-        val fileNameWithoutExtension = fileName.dropRight(6)
+        val fileNameWithoutExtension = newFilePath.last.dropRight(6)
 
         def isTestClass(existingClassName: String): Boolean = {
-          existingClassName.endsWith("Spec") || existingClassName.endsWith("Test")
+          existingClassName
+            .endsWith("Spec") || existingClassName.endsWith("Test")
         }
 
         // Rename the class if it doesn't match the filename
         if (
-          isTestClass(existingClassName) && existingClassName.toLowerCase != fileNameWithoutExtension.toLowerCase
+          isTestClass(
+            existingClassName
+          ) && existingClassName.toLowerCase != fileNameWithoutExtension.toLowerCase
         ) {
           // Update the content with the new class name
           val updatedContent = content.replaceAll(
@@ -37,13 +48,11 @@ object RenameClassNames {
             s"class $fileNameWithoutExtension"
           )
 
-          val newFileName = filePath.toString.replace("Test.scala", "UnitTest.scala").replace("Spec.scala", "UnitTest.scala")
-          //rename file
-          os.move(filePath, os.Path(newFileName))
-
-          //Now, rename the class
-          os.write.over(os.Path(newFileName), updatedContent)
-          println(s"Renamed class in $fileName to $fileNameWithoutExtension")
+          // Now, rename the class
+          os.write.over(newFilePath, updatedContent)
+          println(
+            s"Renamed class in ${newFilePath.last} to $fileNameWithoutExtension"
+          )
         }
       }
   }
