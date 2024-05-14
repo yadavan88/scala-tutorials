@@ -5,7 +5,7 @@ import utest._
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object AsyncTest extends TestSuite {
+object AsyncUnitTest extends TestSuite {
   def getFromDB(): Future[Int] = Future { 42 }
 
   override def tests: Tests = Tests {

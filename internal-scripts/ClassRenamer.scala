@@ -14,7 +14,7 @@ object RenameClassNames {
       .filter(_.toString.contains("src/test/scala"))
       .filterNot(_.toString.endsWith("UnitTest.scala"))
       .filter(f =>
-        f.toString.endsWith("Test.scala") || f.toString.endsWith("Spec.scala")
+        f.toString.endsWith("Test.scala") || f.toString.endsWith("Spec.scala") || f.toString.endsWith("Tests.scala") || f.toString.endsWith("Suite.scala")
       )
       .foreach { _filePath =>
         val _fileName = _filePath.last
@@ -22,6 +22,8 @@ object RenameClassNames {
         val newFileName = _filePath.toString
           .replace("Test.scala", "UnitTest.scala")
           .replace("Spec.scala", "UnitTest.scala")
+          .replace("Suite.scala", "UnitTest.scala")
+          .replace("Tests.scala", "UnitTest.scala")
 
         // rename file
         val newFilePath = os.Path(newFileName)

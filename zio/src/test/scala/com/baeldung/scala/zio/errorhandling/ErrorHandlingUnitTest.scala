@@ -4,10 +4,10 @@ import zio.{Scope, ZIO}
 import zio.test.{Spec, TestEnvironment, ZIOSpecDefault}
 import zio.test._
 
-object ErrorHandlingSpec extends ZIOSpecDefault {
+object ErrorHandlingUnitTest extends ZIOSpecDefault {
   val successResult = "success"
   override def spec: Spec[TestEnvironment with Scope, Any] =
-    suite("ErrorHandlingSpec")(
+    suite("ErrorHandlingUnitTest")(
       test("usingEither returns Either of String") {
         for {
           result <- ErrorHandling.usingEither

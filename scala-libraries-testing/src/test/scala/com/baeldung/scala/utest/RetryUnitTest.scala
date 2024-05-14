@@ -4,7 +4,7 @@ import utest._
 
 import scala.util.Random
 
-object RetryTest extends TestSuite {
+object RetryUnitTest extends TestSuite {
   override def tests: Tests = Tests {
     def flakyMethod: Int =
       Random.nextInt(2) // change this value to test failure

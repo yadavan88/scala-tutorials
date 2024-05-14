@@ -5,7 +5,7 @@ import org.scalatestplus.play.MixedPlaySpec
 import play.api.Configuration
 import play.api.inject.guice.GuiceApplicationBuilder
 
-class ArrivalDecoratorServiceTest extends MixedPlaySpec {
+class ArrivalDecoratorServiceUnitTest extends MixedPlaySpec {
 
   "ArrivalDecoratorService#decorate" should {
     "mark as short an arrival with plane name length = 5" in new App(

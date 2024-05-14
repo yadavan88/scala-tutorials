@@ -8,7 +8,7 @@ import play.api.mvc.Headers
 import play.api.mvc.Results.NoContent
 import play.api.test.{FakeRequest, Helpers}
 
-class SourceActionsTest
+class SourceActionsUnitTest
   extends AnyWordSpec
   with SourceActions
   with ScalaFutures {

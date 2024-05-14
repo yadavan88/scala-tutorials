@@ -3,7 +3,7 @@ package com.baeldung.scala.zio.repeatretry
 import zio._
 import zio.test._
 
-object RepeatRetryTest extends ZIOSpecDefault {
+object RepeatRetryUnitTest extends ZIOSpecDefault {
   override def spec = suite("CreateZIOEffects")(
     test("execute retry and end with default handler") {
       val failingZIO = ZIO.fail(new Exception("Fail!"))

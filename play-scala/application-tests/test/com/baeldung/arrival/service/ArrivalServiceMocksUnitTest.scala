@@ -15,7 +15,7 @@ import slick.dbio.{DBIO, SuccessAction}
 
 import scala.concurrent.Future
 
-class ArrivalServiceMocksTest
+class ArrivalServiceMocksUnitTest
   extends AnyWordSpec
   with GuiceOneAppPerTest
   with ScalaFutures

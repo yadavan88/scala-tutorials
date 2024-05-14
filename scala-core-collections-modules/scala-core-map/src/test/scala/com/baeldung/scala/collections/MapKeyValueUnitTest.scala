@@ -3,7 +3,7 @@ package com.baeldung.scala.collections
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-class MapKeyValue extends AnyWordSpec with Matchers {
+class MapKeyValueUnitTest extends AnyWordSpec with Matchers {
   "Map::map" should {
     "map both keys and values to a new Iterable" in {
       val m = Map(1 -> "A", 2 -> "B")

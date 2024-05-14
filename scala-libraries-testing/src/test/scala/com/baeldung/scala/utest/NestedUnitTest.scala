@@ -2,7 +2,7 @@ package com.baeldung.scala.utest
 
 import utest._
 
-object NestedTest extends TestSuite {
+object NestedUnitTest extends TestSuite {
   override def tests: Tests = Tests {
     test("outer test") - {
       val list = List(1, 2)

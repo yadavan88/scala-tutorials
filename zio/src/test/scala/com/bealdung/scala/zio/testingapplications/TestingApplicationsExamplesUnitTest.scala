@@ -5,8 +5,8 @@ import zio.test._
 import zio.test.Assertion._
 import com.baeldung.scala.zio.testingapplications.TestingApplicationsExamples._
 
-object TestingApplicationsExamplesSpec extends ZIOSpecDefault {
-  override def spec = suite("TestingApplicationsExamplesSpec")(
+object TestingApplicationsExamplesUnitTest extends ZIOSpecDefault {
+  override def spec = suite("TestingApplicationsExamplesUnitTest")(
     test("returnString correctly returns string") {
       val testString = "Hello World!"
       for {

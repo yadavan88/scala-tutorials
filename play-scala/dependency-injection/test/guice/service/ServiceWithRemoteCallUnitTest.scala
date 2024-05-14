@@ -10,7 +10,7 @@ import org.scalatest.wordspec.FixtureAnyWordSpecLike
 import org.scalatestplus.play.MixedFixtures
 import play.api.inject.guice.GuiceApplicationBuilder
 
-class ServiceWithRemoteCallTest
+class ServiceWithRemoteCallUnitTest
   extends MixedFixtures
   with FixtureAnyWordSpecLike {
 

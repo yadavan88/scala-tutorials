@@ -13,7 +13,7 @@ import org.scalatestplus.play.guice.GuiceOneAppPerTest
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.{Application, Configuration, inject}
 
-class ArrivalServiceIsolatedTest
+class ArrivalServiceIsolatedUnitTest
   extends AnyWordSpec
   with GuiceOneAppPerTest
   with ScalaFutures {

@@ -6,7 +6,7 @@ import org.scalatest.prop.TableDrivenPropertyChecks
 import cats.data.NonEmptyChain
 import cats.data.Validated.Invalid
 
-class DataValidationSuite
+class DataValidationUnitTest
   extends AnyFlatSpec
   with Matchers
   with TableDrivenPropertyChecks:

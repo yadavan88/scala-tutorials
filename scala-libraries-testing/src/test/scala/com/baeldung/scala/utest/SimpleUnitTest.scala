@@ -2,7 +2,7 @@ package com.baeldung.scala.utest
 
 import utest._
 
-object SimpleUTest extends TestSuite {
+object SimpleUnitTest extends TestSuite {
   override def tests: Tests = Tests {
     test("str") {
       val name = "Baeldung"

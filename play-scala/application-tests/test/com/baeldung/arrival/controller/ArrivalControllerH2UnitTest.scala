@@ -11,7 +11,7 @@ import play.api.libs.ws.{WSClient, WSResponse}
 
 import scala.concurrent.Future
 
-class ArrivalControllerH2Test
+class ArrivalControllerH2UnitTest
   extends AnyWordSpec
   with WsScalaTestClient
   with GuiceOneServerPerTest

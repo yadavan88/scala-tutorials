@@ -2,7 +2,7 @@ package com.baeldung.scala.strings.interpolation.strings.interpolation
 
 import org.scalatest.flatspec.AnyFlatSpec
 
-class InterpolationEscapesSpec extends AnyFlatSpec {
+class InterpolationEscapesUnitTest extends AnyFlatSpec {
 
   val DOUBLE_QUOTE: Char = '"'
 

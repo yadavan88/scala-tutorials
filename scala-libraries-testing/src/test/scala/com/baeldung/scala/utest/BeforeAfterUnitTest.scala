@@ -2,7 +2,7 @@ package com.baeldung.scala.utest
 
 import utest._
 
-object BeforeAfterTest extends TestSuite {
+object BeforeAfterUnitTest extends TestSuite {
   println("This is executed before the tests")
   override def utestAfterAll() = {
     println("This method will be executed after all the tests")

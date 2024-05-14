@@ -8,7 +8,7 @@ import org.scalatestplus.play.guice.GuiceOneAppPerTest
 
 import scala.language.postfixOps
 
-class ArrivalServiceH2Test
+class ArrivalServiceH2UnitTest
   extends AnyWordSpec
   with GuiceOneAppPerTest
   with ScalaFutures

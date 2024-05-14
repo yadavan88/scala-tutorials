@@ -5,7 +5,7 @@ import org.scalatest.wordspec.AnyWordSpec
 
 import scala.collection.SortedSet
 
-class FindFilterCollector extends AnyWordSpec with Matchers {
+class FindFilterCollectorUnitTest extends AnyWordSpec with Matchers {
   "find method" should {
     "select one element from a collection using find method" in {
       val numbers = List(1, 2, 3, 4, 5, 6)

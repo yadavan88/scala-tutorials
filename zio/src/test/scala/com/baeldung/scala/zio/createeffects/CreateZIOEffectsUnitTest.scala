@@ -7,7 +7,7 @@ import com.baeldung.scala.zio.createeffects.CreateZIOEffects._
 import scala.concurrent.Future
 import scala.util.Try
 
-object CreateZIOEffectsSpec extends ZIOSpecDefault {
+object CreateZIOEffectsUnitTest extends ZIOSpecDefault {
   override def spec = suite("CreateZIOEffects")(
     test("fromValue") {
       for {

@@ -12,7 +12,7 @@ import pureconfig.generic.ProductHint
 import pureconfig.error.ConfigReaderException
 import scala.concurrent.duration._
 
-class SampleConfigLoader extends AnyWordSpec with Matchers {
+class SampleConfigLoaderUnitTest extends AnyWordSpec with Matchers {
 
   "pureconfig" should {
     "load config successfully" in {

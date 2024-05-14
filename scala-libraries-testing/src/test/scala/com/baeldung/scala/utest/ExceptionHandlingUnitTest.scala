@@ -2,7 +2,7 @@ package com.baeldung.scala.utest
 
 import utest._
 
-object ExceptionHandling extends TestSuite {
+object ExceptionHandlingUnitTest extends TestSuite {
   override def tests: Tests = Tests {
     def funnyMethod: String = throw new RuntimeException("Uh oh...")
     test("Handle an exception") {

@@ -1,11 +1,11 @@
 package com.baeldung.scala.zio.aspects
 
-import com.baeldung.scala.zio.aspects.ZAspectsSpec.test
+import com.baeldung.scala.zio.aspects.ZAspectsUnitTest.test
 import zio.*
 import zio.test.*
 import zio.test.TestAspect.{aroundWith, ignore, nonFlaky, timeout}
 
-object ZAspectsSpec extends ZIOSpecDefault {
+object ZAspectsUnitTest extends ZIOSpecDefault {
   override def spec = suite("ZAspectSpec")(
     test("Tautology test") {
       assertTrue(true)
