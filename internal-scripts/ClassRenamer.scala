@@ -12,6 +12,7 @@ object RenameClassNames {
     os.walk(directory)
       .filter(_.ext == "scala")
       .filter(_.toString.contains("src/test/scala"))
+      .filterNot(_.toString.endsWith("UnitTest.scala"))
       .filter(f =>
         f.toString.endsWith("Test.scala") || f.toString.endsWith("Spec.scala")
       )
