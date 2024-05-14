@@ -1,6 +1,6 @@
 /** This is an internal scala-cli script written just to reduce manual work of
-  * renaming class names. This doesn't fully correct all the class names,
-  * however reduces the manual effort by 90%.
+  * renaming files and class names to follow naming standards. This doesn't fully correct all the class names,
+  * however reduces the manual effort by 90%. 
   */
 //> using toolkit default
 import os._
@@ -33,11 +33,8 @@ object RenameClassNames {
         val fileNameWithoutExtension = newFilePath.last.dropRight(6)
 
         def isTestClass(existingClassName: String): Boolean = {
-          val endsWithTestOrSpec = existingClassName
+          existingClassName
             .endsWith("Spec") || existingClassName.endsWith("Test")
-
-          val isClass = existingClassName.startsWith("class")
-          endsWithTestOrSpec && isClass
         }
 
         // Rename the class if it doesn't match the filename
